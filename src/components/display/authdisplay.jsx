@@ -4,14 +4,13 @@ import { useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import moment from 'moment'
 import './Display.css'
-import UpdateBlog from '../postblog/update';
 
 
 const Blogstuc = (props) =>{
     
     const [Blog, setBlog] = useState({})
     useEffect(()=>{
-        axios.post('https://blogsoft.herokuapp.com/blog', data)
+        axios.post('https://blogsoftapi.herokuapp.com/blog', data)
         .then(response =>{
             if(response.data.message){
                 setBlog(response.data.docs)
