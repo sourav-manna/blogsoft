@@ -1,0 +1,71 @@
+.log{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 150px;
+}
+
+.log table{
+    background-color: white;
+    padding: 15px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-radius: 10px;   
+}
+
+.log input{
+    width: 240px;
+    height: 20px;
+    padding: 10px;
+    padding-left: 20px !important;
+    padding-right: 20px!important;
+    background-color: transparent;
+    border-color:gray;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.log input::content {
+    border-style: none;
+    border: none;
+    background-color: rgb(186, 77, 77);
+}
+.log td{
+    padding: 10px;
+}
+
+.log h2{
+    float: left;
+    margin-left: 3%;
+    padding: 7px;
+    font-weight: 500;
+    border-left: 5px;
+    border-color:orange;
+    border-left-style: solid;
+}
+
+
+.log button{
+    transform: scaleX(1);
+    transition-duration: .5s;
+    width: 287px;
+    height: 50px;
+    background-color: rgb(81, 133, 229);
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.log button:hover{
+    background-color: rgb(45, 110, 231);
+}
+
+.log button:active{
+    transform: scaleX(0.9);
+    transition-duration: .5s;
+}
+
+.log p{
+    color: rgb(203, 0, 0);
+    height: 30px;
+}

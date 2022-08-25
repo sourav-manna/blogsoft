@@ -1,0 +1,96 @@
+.form-blog{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.form-blog h2{
+    padding: 7px;
+    font-weight: 500;
+    border-left: 5px;
+    border-color:orange;
+    border-left-style: solid;
+}
+
+
+.form-blog .c1{
+    padding: 2%;
+    width: 60%;
+    background-color: white;
+    text-align: left;
+    border-radius: 10px;
+}
+.form-blog .c2{
+    padding: 2%;
+    width: 98%;
+    height: 400px;
+    overflow-y: scroll;
+    scrollbar-width: 2px;
+}
+
+.form-blog input{
+    width: 94%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.form-blog textarea{
+    width: 94%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    height: 140px;
+    resize: none;
+}
+
+.form-blog button{
+    transform: scaleX(1);
+    transition-duration: .5s;
+    margin-top: 20px;
+    width: 150px;
+    height: 50px;
+    background-color: rgb(81, 133, 229);
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.form-blog button:hover{
+    background-color: rgb(43, 100, 207);
+}
+
+.form-blog button:active{
+    transform: scaleX(0.9);
+    transition-duration: .5s;
+}
+
+
+::-webkit-scrollbar {
+    width: 10px;
+    position:fixed;
+  }
+  
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+  
+::-webkit-scrollbar-thumb {
+    background: #BDBDBD;
+}
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #6E6E6E;
+}
+
+@media only screen and (max-width: 600px){
+    .form-blog .c1{
+        width: 90%;
+    }
+}

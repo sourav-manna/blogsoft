@@ -1,0 +1,176 @@
+.navbar{
+    height: 60px;
+    padding-left: 7px;
+    padding-right: 10px;
+    width: 100%;
+    top: 0;
+    display: flex;
+    align-items: center;
+    position:fixed;
+    background-image: linear-gradient(to right, #f6a7ff, #a3f7ff);
+    color: black;
+    z-index: 10;
+}
+
+a{
+    text-decoration: none !important;
+}
+
+.navbar div{
+    display: flex;
+    justify-content: center;
+}
+.navbar li{
+    display: inline;
+    padding: 2%;
+}
+.navbar img{
+    height: 50px;
+}
+.navbar .first{
+    justify-content: left !important;
+    padding-left: 10px;
+    width: 20%;
+}
+.navbar .middle{
+    flex-grow: 3;
+}
+.navbar .last{
+    justify-content: right;
+    padding-right: 30px;
+    width: 20%;
+}
+
+
+
+.navbar .last button{
+    transform: scaleX(1);
+    transition-duration: 0.2s;
+    background-color: rgb(0, 148, 227);
+    width: 120px;
+    height: 40px;
+    border-radius: 20px;
+    color: white;
+    overflow: hidden;
+    font-size: 15px;
+    border: none;
+    outline: none;
+}
+.navbar .last button span{
+    display: none;
+}
+
+
+#menuclose{
+    display: inline;
+    margin-right: 185px;
+}
+
+.navbar .last button:hover .hide{
+    transition: all 500ms ease;
+    display: inline;
+    margin-left: 5px;
+}
+
+.navbar .last .user{
+    background-color: white;
+    border-radius: 25px;
+    padding: 5px;
+    box-shadow: 1px 1px 4px rgb(219, 219, 219);
+}
+
+.last .logo{
+    background-color: rgb(0, 156, 204);
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+    color: aliceblue;
+    border-radius: 20px;
+    box-shadow: 1px 1px 5px rgb(160, 160, 160);
+}
+
+.last .onlypc{
+    transition-duration: 0.3s;
+    margin-left: 20px;
+    margin-top: 15px;
+    padding: 5px;
+    color:rgb(25, 100, 100);
+}
+
+.last .onlypc:hover{
+    color: rgb(201, 90, 0);
+    transition-duration: 0.3s;
+}
+
+
+
+.side-nav{
+    top: 0;
+    width: 260px;
+    display: none;
+    height: 100%;
+    padding-top: 15px;
+    background-color: rgb(52, 76, 85);
+    color: white;
+    position: fixed;
+    z-index: 10;
+}
+
+.side-nav .main-h{
+    margin-left: 20%;
+    margin-right: 20%;
+    height: 2px;
+    background-color: gray;
+    border: none;
+    outline: none;
+}
+
+.side-nav div{
+    padding-top: 40%;
+}
+
+.side-nav li{
+    padding: 5%;
+    list-style: none;
+    text-align: center;
+}
+
+
+
+li{
+    transform: scale(1);
+    transition-duration: 0.2s; 
+    cursor: pointer;
+}
+
+li:hover{
+    transform: scale(1.1) !important;
+    transition-duration: 0.2s;
+}
+
+#menuclose{
+    display: none;
+}
+
+@media only screen and (max-width: 600px){
+    .side-nav{
+        width: 100%;
+        align-items: center;
+    }
+    #menuclose{
+        position:absolute;
+        margin-top: 180%;
+    }
+    .side-nav i{
+        text-align: center;
+    }
+    .navbar .last{
+        justify-content: right;
+        padding-right: 15px;
+        width: 20%;
+    }
+    .navbar .last button{
+        width: 80px;
+    }
+
+}
