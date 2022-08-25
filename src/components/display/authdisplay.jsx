@@ -7,10 +7,10 @@ import './Display.css'
 
 
 const Blogstuc = (props) =>{
-    
+    const uniquedata = {id: props.blog}
     const [Blog, setBlog] = useState({})
     useEffect(()=>{
-        axios.post('https://blogsoftapi.herokuapp.com/blog', data)
+        axios.post('https://blogsoftapi.herokuapp.com/blog', uniquedata)
         .then(response =>{
             if(response.data.message){
                 setBlog(response.data.docs)
@@ -19,18 +19,19 @@ const Blogstuc = (props) =>{
             }
         })
     },[]);
-
+    
     const navigate = useNavigate();
     const del = () =>{
         console.log('in del')
         if (localStorage.getItem('user') !== null && localStorage.getItem('email') !== null){
             const user = {_id: localStorage.getItem('user'), email: localStorage.getItem('email')}
-            console.log("after post")
+            
             axios.post('https://blogsoftapi.herokuapp.com/auth', user)
             .then(resp=>{
                 if(resp.data.status){
                     if(Blog.authoremail === localStorage.getItem('email')){
-                    axios.delete('https://blogsoftapi.herokuapp.com/dscga75ru/delete', {id: props.blog})
+                        console.log(props.blog)
+                    axios.post('https://blogsoftapi.herokuapp.com/dscga75ru/delete', uniquedata)
                     .then(response=>{
                         if(response.data.status){
                             navigate('/myblogs')
@@ -47,7 +48,7 @@ const Blogstuc = (props) =>{
     }
 
 
-    const data = {id: props.blog}
+    
     const linknetwork = '/update/'+props.blog 
     
 
