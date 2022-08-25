@@ -11,7 +11,7 @@ const Blogstuc = (props) =>{
     
     const [Blog, setBlog] = useState({})
     useEffect(()=>{
-        axios.post('http://localhost:8000/blog', data)
+        axios.post('https://blogsoft.herokuapp.com/blog', data)
         .then(response =>{
             if(response.data.message){
                 setBlog(response.data.docs)
