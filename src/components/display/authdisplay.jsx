@@ -30,10 +30,10 @@ const Blogstuc = (props) =>{
             .then(resp=>{
                 if(resp.data.status){
                     if(Blog.authoremail === localStorage.getItem('email')){
-                    axios.delete('https://blogsoftapi.herokuapp.com/delete', {id: props.blog})
+                    axios.delete('https://blogsoftapi.herokuapp.com//dscga75ru/delete', {id: props.blog})
                     .then(response=>{
                         if(response.data.status){
-                            navigate('/blog')
+                            navigate('/myblogs')
                         }else{
                             console.log('error!!')
                         }
