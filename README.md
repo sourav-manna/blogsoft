@@ -1,7 +1,7 @@
 # A blog Application using MERN Stack
 
 
-![image](https://user-images.githubusercontent.com/82703663/186967598-48019f8a-3283-4c7d-8f27-572064c3af9d.png)
+![image](https://user-images.githubusercontent.com/82703663/186967598-48019f8a-3283-4c7d-8f27-572064c3af9d.png | height=360)
 ![image](https://user-images.githubusercontent.com/82703663/186969976-49393b81-d248-42c7-94d0-4db0f513620f.png)
 ![image](https://user-images.githubusercontent.com/82703663/186970011-4324ed4e-dd95-41bc-b0ea-9a665fd9e796.png)
 ![image](https://user-images.githubusercontent.com/82703663/186970022-1e12b25e-04e5-4f9c-9d1e-87640801ede0.png)
