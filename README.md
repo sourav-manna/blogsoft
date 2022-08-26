@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+#A blog Application using Marn Stack
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 
 ## Available Scripts
 
