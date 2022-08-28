@@ -13,7 +13,6 @@ const Blogstuc = (props) =>{
         axios.post('https://blogsoftapi.herokuapp.com/blog', data)
         .then(response =>{
             if(response.data.message){
-                console.log(response.data.docs)
                 setBlog(response.data.docs)
             }else{
                 console.log("Server error!!")

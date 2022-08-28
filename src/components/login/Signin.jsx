@@ -25,7 +25,7 @@ const Signin = () =>{
                 localStorage.setItem('name',response.data.name);
                 navigate('/')
             }else{
-                setWarning("Invalid User Id or Password")
+                setWarning("Invalid \n  Email Id or Password")
             }
         })}
     }
@@ -35,7 +35,7 @@ const Signin = () =>{
             <table>
                 <tr>
                     <h2>Log In</h2>
-                    <p>{warning}</p>
+                    <pre>{warning}</pre>
                 </tr>
                 <tr>
                     <td><input type = "email" value={email} name = 'email' placeholder='Email id' onChange={(e)=>setEmail(e.target.value)} required></input></td>

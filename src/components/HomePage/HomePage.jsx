@@ -1,7 +1,6 @@
 import './HomePage.css';
 import moment from 'moment'
-import axios from 'axios'
-import { useEffect, useState } from 'react'
+import {useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const Page = (props) =>{
@@ -19,7 +18,7 @@ const Page = (props) =>{
     return(
         <div className='container'>
         <button className='b2' id='btu2' onClick={()=>{setIndex((index+1))}}><i class="fa-solid fa-circle-chevron-right fa-2xl"></i></button>
-            <div className = "blog2">
+            <div className = "blog2" onClick = {()=>navigator("/blog/"+div1._id)}>
                 <div className= "image">
                     <img src={div1.image} alt=""></img>
                 </div>
@@ -55,7 +54,7 @@ const Page = (props) =>{
                     </div>
                 </div>
             </div>
-            <div className = "blog2">
+            <div className = "blog2" onClick = {()=>navigator("/blog/"+div3._id)}>
                 <div className= "image">
                     <img src={div3.image} alt=""></img>
                 </div>

@@ -49,7 +49,6 @@ const CreateBlog = () =>{
             <textarea value={blog} onChange={(e)=>setBlog(e.target.value)}></textarea><br/>
             <label>Image URL</label><br/>
             <input type="text" value={image} onChange={(e)=>setImage(e.target.value)}/><br/>
-            <label>Cetagory</label><br/>
             <br/><br/>
             </div>
             <button type='submit' onClick={createnow}>Publish</button>

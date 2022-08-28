@@ -14,13 +14,17 @@
     margin: 10px;
     width: 300px;
     border-radius: 5px;
+    /*
     box-shadow: 1px 1px 10px rgb(211, 211, 211);
+    */
+    box-shadow: 2px 3px 3px rgb(188, 188, 188);
     background-color: white;
     cursor: pointer;
 }
 .main-container .blog:hover{
     transform: scale(1.03);
     transition-duration: 0.3s;
+    /*edited*/
 }
 
 .main-container .image img{

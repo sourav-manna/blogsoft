@@ -5,17 +5,17 @@ import { useNavigate } from "react-router-dom";
 
 const Signup = () =>{
     const navigator = useNavigate();
-    const [name, setName] = useState(null);
-    const [email, setEmail] = useState(null);
-    const [pass, setPass] = useState(null);
-    const [warning, setWarning] = useState(null);
+    const [name, setName] = useState();
+    const [email, setEmail] = useState();
+    const [pass, setPass] = useState();
+    const [warning, setWarning] = useState();
 
     const signupnow = () =>{
-        if(name !== null && email !== null && pass !== null){
+        if(name != undefined && email != undefined && pass != undefined){
             axios.get('https://blogsoftapi.herokuapp.com/usercheck', {email: email})
             .then(res =>{
                 if(res.data.status){
-                    setWarning('Email id already register')
+                    setWarning('Email Id \n Already register')
                 }else{
                     const data = {name: name, email: email, pass: pass};
                     axios.post('https://blogsoftapi.herokuapp.com/signup', data)
@@ -30,7 +30,13 @@ const Signup = () =>{
                 }
             })
         }else{
-            setWarning('Fill all details')
+            if(!email){
+                setWarning('Enter your Email')
+            }else if(!name){
+                setWarning('Enter your Name')
+            }else if(!pass){
+                setWarning('Enter Password')
+            }
         }
     }
 
@@ -38,8 +44,8 @@ const Signup = () =>{
     return(
         <div className='log'>
         <table>
-            <h2>Sign up</h2>
-            <p>{warning}</p>
+            <h2>Sign Up</h2>
+            <pre>{warning}</pre>
             <tr>
             <td><input type="email" name="email" id="useremail" value={email} placeholder='Email Id' onChange={(e) => setEmail(e.target.value)}/></td>
             </tr>

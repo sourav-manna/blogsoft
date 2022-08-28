@@ -50,14 +50,14 @@
     transition-duration: .5s;
     width: 287px;
     height: 50px;
-    background-color: rgb(81, 133, 229);
+    background-color: rgb(56, 116, 227);
     color: white;
     border: none;
     border-radius: 5px;
 }
 
 .log button:hover{
-    background-color: rgb(45, 110, 231);
+    background-color: rgb(36, 79, 158);
 }
 
 .log button:active{
@@ -65,7 +65,12 @@
     transition-duration: .5s;
 }
 
-.log p{
-    color: rgb(203, 0, 0);
+.log pre{
+    color: rgb(153, 2, 2);
     height: 30px;
+    font-size:larger;
+}
+
+.log span{
+    float: left;
 }

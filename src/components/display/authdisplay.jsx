@@ -22,15 +22,14 @@ const Blogstuc = (props) =>{
     
     const navigate = useNavigate();
     const del = () =>{
-        console.log('in del')
+        let text = "\n   Delete this blog ?";
         if (localStorage.getItem('user') !== null && localStorage.getItem('email') !== null){
             const user = {_id: localStorage.getItem('user'), email: localStorage.getItem('email')}
-            
             axios.post('https://blogsoftapi.herokuapp.com/auth', user)
             .then(resp=>{
                 if(resp.data.status){
                     if(Blog.authoremail === localStorage.getItem('email')){
-                        console.log(props.blog)
+                    if(window.confirm(text) === true){
                     axios.post('https://blogsoftapi.herokuapp.com/dscga75ru/delete', uniquedata)
                     .then(response=>{
                         if(response.data.status){
@@ -39,15 +38,13 @@ const Blogstuc = (props) =>{
                             console.log('error!!')
                         }
                     })
-                }else alert("You don't have permission")
+                }}else alert("You don't have permission")
             }else alert('Something went wrong')})
 
         }else{
             alert('Please log in')
         }
     }
-
-
     
     const linknetwork = '/update/'+props.blog 
     
