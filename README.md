@@ -1,6 +1,47 @@
-# Getting Started with Create React App
+# A Blog Application Using MERN Stack
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!--
+![image](https://user-images.githubusercontent.com/82703663/186967598-48019f8a-3283-4c7d-8f27-572064c3af9d.png)
+![image](https://user-images.githubusercontent.com/82703663/186969976-49393b81-d248-42c7-94d0-4db0f513620f.png)
+![image](https://user-images.githubusercontent.com/82703663/186970011-4324ed4e-dd95-41bc-b0ea-9a665fd9e796.png)
+![image](https://user-images.githubusercontent.com/82703663/186970022-1e12b25e-04e5-4f9c-9d1e-87640801ede0.png)
+-->
+## Desktop view
+<div float="left">
+<img src="https://user-images.githubusercontent.com/82703663/186967598-48019f8a-3283-4c7d-8f27-572064c3af9d.png" width="500" height="280">
+<img src="https://user-images.githubusercontent.com/82703663/186969976-49393b81-d248-42c7-94d0-4db0f513620f.png" width="500" height="280">
+<img src="https://user-images.githubusercontent.com/82703663/186970011-4324ed4e-dd95-41bc-b0ea-9a665fd9e796.png" width="500" height="280">
+<img src="https://user-images.githubusercontent.com/82703663/186970022-1e12b25e-04e5-4f9c-9d1e-87640801ede0.png" width="500" height="280">
+ </div>
+
+
+
+## Smart Phone view
+<div float="left">
+<img src="https://user-images.githubusercontent.com/82703663/186970184-8b243b82-e9c1-4245-a3c1-ed53b0858615.png" width="270" height="550">
+<img src="https://user-images.githubusercontent.com/82703663/186970212-7435e62d-efb3-49fe-a331-28308455bf77.png" width="270" height="550">
+<img src="https://user-images.githubusercontent.com/82703663/186970252-566bc49e-8fe7-4b0e-a13c-2fcd26593dfb.png" width="270" height="550">
+<img src="https://user-images.githubusercontent.com/82703663/186970303-07fa160f-a3b5-4aa4-b0d4-ee88d2b8862e.png" width="270" height="550">
+<img src="https://user-images.githubusercontent.com/82703663/186970342-c883b6ca-fb77-4e64-990f-2243ca2c8e63.png" width="270" height="550">
+<img src="https://user-images.githubusercontent.com/82703663/186970405-5a99faff-a1e2-4866-a8b1-e32cfe82aa56.png" width="270" height="550">
+</div>
+<!--
+<img src="https://user-images.githubusercontent.com/82703663/186970373-c280022c-7f06-431a-9def-e564254b5455.png" width="270" height="550">
+//![image](https://user-images.githubusercontent.com/82703663/186970184-8b243b82-e9c1-4245-a3c1-ed53b0858615.png)
+//![image](https://user-images.githubusercontent.com/82703663/186970212-7435e62d-efb3-49fe-a331-28308455bf77.png)
+//![image](https://user-images.githubusercontent.com/82703663/186970252-566bc49e-8fe7-4b0e-a13c-2fcd26593dfb.png)
+//![image](https://user-images.githubusercontent.com/82703663/186970303-07fa160f-a3b5-4aa4-b0d4-ee88d2b8862e.png)
+//![image](https://user-images.githubusercontent.com/82703663/186970342-c883b6ca-fb77-4e64-990f-2243ca2c8e63.png)
+//![image](https://user-images.githubusercontent.com/82703663/186970373-c280022c-7f06-431a-9def-e564254b5455.png)
+//![image](https://user-images.githubusercontent.com/82703663/186970405-5a99faff-a1e2-4866-a8b1-e32cfe82aa56.png)
+-->
+
+
+
+
+
+
+
 
 ## Available Scripts
 
@@ -27,44 +68,4 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
