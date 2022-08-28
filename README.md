@@ -5,8 +5,15 @@
 <ul>
 <li>Show all blogs</li>
 <li>Post new blog</li>
-<li>Edit blogs(Only author have permission)</li>
-<li>Delete blogs(Only author have permission)</li>
+<li>Edit blogs (Only author have permission)</li>
+<li>Delete blogs (Only author have permission)</li>
+</ul>
+
+## Technologies Used
+<ul>
+ <li>React</li>
+ <li>Node.js</li>
+ <li>MongoDB</li>
 </ul>
 
 <!--
