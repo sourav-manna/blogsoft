@@ -1,5 +1,4 @@
 import './App.css';
-import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 import Navbar from './components/navbar/Navbar';
 import Blog from './components/blog/Blog';
@@ -23,6 +22,7 @@ function App() {
         .then(response =>{
             if(response.data.message){
                 setBloglist(response.data.docs)
+                document.getElementById('loading').style.display = 'none';
             }else{
                 console.log("error!!")
             }
@@ -32,6 +32,9 @@ function App() {
   return (
     <div className="App">
     <div className='body-main'>
+    <div className='container-image' id='loading'>
+          <img src="https://i.pinimg.com/originals/43/3b/6c/433b6c5336c72a21bcfd9db8d831562a.gif"alt=""/>
+    </div>
     <BrowserRouter>
     <Navbar/>
       <Routes>

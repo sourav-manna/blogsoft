@@ -8,10 +8,12 @@ const MyBlog = () => {
     const navigator = useNavigate()
     const [MyBloglist, setMyBloglist] = useState([])
     useEffect(()=>{
+        document.getElementById('loading').style.display = 'block';
         axios.post('https://blogsoftapi.herokuapp.com/myblogs', {email: localStorage.getItem('email')})
         .then(response =>{
             if(response.data.message){
                 setMyBloglist(response.data.docs.reverse())
+                document.getElementById('loading').style.display = 'none';
             }else{
                 console.log("error!!")
             }
