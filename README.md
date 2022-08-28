@@ -1,5 +1,14 @@
 # A Blog Application Using MERN Stack
 
+## Features
+
+<ul>
+<li>Show all blogs</li>
+<li>Post new blog</li>
+<li>Edit blogs(Only author can edit respective blogs)</li>
+<li>Delete blogs</li>
+</ul>
+
 <!--
 ![image](https://user-images.githubusercontent.com/82703663/186967598-48019f8a-3283-4c7d-8f27-572064c3af9d.png)
 ![image](https://user-images.githubusercontent.com/82703663/186969976-49393b81-d248-42c7-94d0-4db0f513620f.png)
