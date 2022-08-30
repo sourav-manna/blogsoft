@@ -9,6 +9,7 @@ import './Display.css'
 const Blogstuc = (props) =>{
     const data = {id: props.blog}
     const [Blog, setBlog] = useState({})
+    const [likes, setLikes] = useState(0)
     useEffect(()=>{
         axios.post('https://blogsoftapi.herokuapp.com/blog', data)
         .then(response =>{
@@ -18,7 +19,35 @@ const Blogstuc = (props) =>{
                 console.log("Server error!!")
             }
         })
+        axios.post('https://blogsoftapi.herokuapp.com/getlikes', {id: localStorage.getItem('user'), blog: props.blog})
+        .then(res=>{
+            setLikes(res.data.count)
+            if(res.data.status){
+                document.getElementById('likebtn').style.color = '#DE3163'
+            }
+        })
     },[]);
+
+    const like = () =>{
+        if(localStorage.getItem('user') != null){
+        const likedata = {id: localStorage.getItem('user'), blog: props.blog}
+        axios.post('https://blogsoftapi.herokuapp.com/likes', likedata)
+        .then(res =>{
+            console.log(res.data)
+            if (res.data == 'add'){
+                setLikes(likes + 1)
+                document.getElementById('likebtn').style.color = '#DE3163'
+
+            }else{
+                setLikes(likes - 1)
+                document.getElementById('likebtn').style.color = 'gray'
+
+            }
+        })}
+        else{
+            alert('Please log in')
+        }
+    }
 
 
     return(
@@ -32,8 +61,8 @@ const Blogstuc = (props) =>{
                        {Blog.title}
                     </div>
                     <div className = "footer">
-                        {Blog.author}
-                        <span class="postTime"><i class="fa-solid fa-calendar-days"></i> {moment(Blog.createdAt).format('MMM DD, YYYY')}</span>
+                        {Blog.author}<span class="postTime"><i class="fa-solid fa-calendar-days"></i> {moment(Blog.createdAt).format('MMM DD, YYYY')}</span>
+                        <p id='likebtn' onClick={()=>like()}><i class="fa-solid fa-heart fa-lg"></i> {likes}</p>
                     </div>
                     <br></br>
                     <div className = "blog_contain">
