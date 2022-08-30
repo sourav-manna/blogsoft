@@ -10,6 +10,8 @@ const Blogstuc = (props) =>{
     const data = {id: props.blog}
     const [Blog, setBlog] = useState({})
     const [likes, setLikes] = useState(0)
+    const [activel, setActivel] = useState(false)
+
     useEffect(()=>{
         axios.post('https://blogsoftapi.herokuapp.com/blog', data)
         .then(response =>{
@@ -24,6 +26,7 @@ const Blogstuc = (props) =>{
             setLikes(res.data.count)
             if(res.data.status){
                 document.getElementById('likebtn').style.color = '#DE3163'
+                setActivel(true)
             }
         })
     },[]);
@@ -33,16 +36,17 @@ const Blogstuc = (props) =>{
         const likedata = {id: localStorage.getItem('user'), blog: props.blog}
         axios.post('https://blogsoftapi.herokuapp.com/likes', likedata)
         .then(res =>{
-            console.log(res.data)
-            if (res.data == 'add'){
-                setLikes(likes + 1)
+            if(res.data){
+            if (!activel){
                 document.getElementById('likebtn').style.color = '#DE3163'
+                setLikes(likes+1)
+                setActivel(true)
 
             }else{
-                setLikes(likes - 1)
                 document.getElementById('likebtn').style.color = 'gray'
-
-            }
+                setLikes(likes-1)
+                setActivel(false)
+            }}
         })}
         else{
             alert('Please log in')
