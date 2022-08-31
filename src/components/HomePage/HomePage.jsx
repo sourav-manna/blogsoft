@@ -27,7 +27,7 @@ const Page = (props) =>{
                        {div1.title} 
                     </div>
                     <div className = "footer">
-                        {div1.author}
+                        <b>{div1.author}</b>
                         <span class="postTime"><i class="fa-solid fa-calendar-days"></i> {moment(div1.createdAt).format('MMM DD, YYYY')}</span>
                     </div>
                     <br></br>
@@ -45,7 +45,7 @@ const Page = (props) =>{
                        {div2.title} 
                     </div>
                     <div className = "footer">
-                        {div2.author}
+                        <b>{div2.author}</b> • {div2.views} views
                         <span class="postTime"><i class="fa-solid fa-calendar-days"></i> {moment(div2.createdAt).format('MMM DD, YYYY')}</span>
                     </div>
                     <br></br>
@@ -63,7 +63,7 @@ const Page = (props) =>{
                        {div3.title} 
                     </div>
                     <div className = "footer">
-                        {div3.author}
+                        <b>{div3.author}</b>
                         <span class="postTime"><i class="fa-solid fa-calendar-days"></i> {moment(div3.createdAt).format('MMM DD, YYYY')}</span>
                     </div>
                     <br></br>

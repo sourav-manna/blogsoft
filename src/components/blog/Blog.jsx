@@ -28,11 +28,12 @@ const Blog = () => {
                 </div>
                 <div className='body'>
                     <div className = "header">
-                       {blogs.title} 
+                       {blogs.title}
                     </div>
                     <div className = "footer">
-                        {blogs.author}
+                        <b>{blogs.author}</b> • {blogs.views} views
                         <span class="postTime"><i class="fa-solid fa-calendar-days"></i> {moment(blogs.createdAt).format('MMM DD, YYYY')}</span>
+                        <br></br>
                     </div>
                     <br></br>
                     <div className = "contain">

@@ -9,6 +9,7 @@ import './Display.css'
 const Blogstuc = (props) =>{
     const uniquedata = {id: props.blog}
     const [Blog, setBlog] = useState({})
+    const [likess, setLikess] = useState(0)
     useEffect(()=>{
         axios.post('https://blogsoftapi.herokuapp.com/blog', uniquedata)
         .then(response =>{
@@ -17,6 +18,10 @@ const Blogstuc = (props) =>{
             }else{
                 console.log("Server error!!")
             }
+        })
+        axios.post('https://blogsoftapi.herokuapp.com/getlikes', uniquedata)
+        .then(ress=>{
+            setLikess(ress.data.count)
         })
     },[]);
     
@@ -74,7 +79,19 @@ const Blogstuc = (props) =>{
                     </div>
                 </div>
             </div>
-            </div>
+            <div className='sideminitab'>
+                <h1>{likess}</h1>
+                Likes
+                <h1>{Blog.views}</h1>
+                Views
+                <br></br>
+                <br></br>
+                <div className='sidiv'>
+                <div className='action-bar'> <Link to={linknetwork} className='linking' ><div className='edit'><i class="fas fa-edit fa-xl"></i>
+                        </div></Link> &nbsp;|&nbsp; <div className='del' onClick={() =>{del()}}><i class="fa-solid fa-trash-can fa-xl"></i></div></div>
+                </div>
+                </div>
+        </div>
     );
 }
 

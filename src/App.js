@@ -12,6 +12,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import UpdateBlog from './components/postblog/update';
 import MyBlog from './components/blog/Myblog';
+import Deshboard from './components/dashboard/dashboard';
 
 
 
@@ -47,6 +48,7 @@ function App() {
         <Route path='/update/:id' element={<UpdateBlog/>}/>
         <Route path='/view/:id' element={<Displayblog1 />} />
         <Route path='/myblogs' element={<MyBlog/>} />
+        <Route path='/dashboard' element={<Deshboard/>} />
       </Routes>
     </BrowserRouter>
     </div>

@@ -7,12 +7,15 @@ import './Display.css'
 
 
 const Blogstuc = (props) =>{
-    const data = {id: props.blog}
+    
     const [Blog, setBlog] = useState({})
     const [likes, setLikes] = useState(0)
+    const [commt, setCommt] = useState()
+    const [Commentt, setComment] = useState([])
     const [activel, setActivel] = useState(false)
 
     useEffect(()=>{
+        const data = {id: props.blog}
         axios.post('https://blogsoftapi.herokuapp.com/blog', data)
         .then(response =>{
             if(response.data.message){
@@ -28,6 +31,12 @@ const Blogstuc = (props) =>{
                 document.getElementById('likebtn').style.color = '#DE3163'
                 setActivel(true)
             }
+        })
+        axios.post('https://blogsoftapi.herokuapp.com/getcomments', data)
+        .then(ress=>{
+            console.log(data)
+            console.log(ress.data.docs)
+            setComment(ress.data.docs)
         })
     },[]);
 
@@ -49,8 +58,35 @@ const Blogstuc = (props) =>{
             }}
         })}
         else{
-            alert('Please log in')
+            alert('Please log In')
         }
+    }
+
+    const refetchcomm = () =>{
+        axios.post('https://blogsoftapi.herokuapp.com/getcomments', {id: props.blog})
+        .then(ress=>{
+            setComment(ress.data.docs)
+        })
+    }
+
+    const commfunc = () =>{
+        if(localStorage.getItem('user') != null && localStorage.getItem('name') != null){
+            if(commt == undefined || commt == null || commt == ""){
+                alert('Please enter your comment')
+            }else{
+                 const commdata = {blog: props.blog, user: localStorage.getItem('user'), name: localStorage.getItem('name'), comment: commt}
+                 axios.post('https://blogsoftapi.herokuapp.com/comment', commdata)
+                 .then(resss=>{
+                    if(resss.data.status){
+                        refetchcomm()
+                    }
+                 })
+                 setCommt("")
+            }
+
+        }else{
+            alert('Please log In')
+        } 
     }
 
 
@@ -65,7 +101,7 @@ const Blogstuc = (props) =>{
                        {Blog.title}
                     </div>
                     <div className = "footer">
-                        {Blog.author}<span class="postTime"><i class="fa-solid fa-calendar-days"></i> {moment(Blog.createdAt).format('MMM DD, YYYY')}</span>
+                        <b>{Blog.author}</b> • {Blog.views} views <span class="postTime"><i class="fa-solid fa-calendar-days"></i> {moment(Blog.createdAt).format('MMM DD, YYYY')}</span>
                         <p id='likebtn' onClick={()=>like()}><i class="fa-solid fa-heart fa-lg"></i> {likes}</p>
                     </div>
                     <br></br>
@@ -77,8 +113,28 @@ const Blogstuc = (props) =>{
                         </textarea>
                     </div>
                 </div>
+
+                <div>
+                <div className='comment-box'>
+                    {Commentt.map((comm)=>(
+                        <div>
+                        <b>{comm.name}</b>
+                        <br></br>
+                        {comm.comment}
+                        <br></br>
+                        <br></br>
+                        </div>
+                     ))} 
+                    <div className='commentsend'>
+                        <input type="text" name="name" value={commt} placeholder='Type here ...' onChange={(e) => setCommt(e.target.value)}></input> 
+                        <button onClick={()=>commfunc()}>Comment</button>
+                    </div> 
+                </div>
+                
             </div>
             </div>
+            </div>
+            
     );
 }
 

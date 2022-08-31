@@ -7,7 +7,7 @@
     display: flex;
     align-items: center;
     position:fixed;
-    background-image: linear-gradient(to right, #f6a7ff, #a3f7ff);
+    background-image: linear-gradient(to right, #f6a7ffe0, #a3f7ffdb);
     color: black;
     z-index: 10;
 }

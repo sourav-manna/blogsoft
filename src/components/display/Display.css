@@ -66,3 +66,50 @@
 #likebtn{
     color: gray;
 }
+
+.sideminitab{
+    margin-left: 75%;
+    margin-top: 20px;
+    width: 140px;
+    background-color: white;
+    height: 280px;
+    border-radius: 20px;
+    text-align: center;
+    position: fixed;
+}
+
+.sideminitab .sidiv{
+    margin-left: 40px;
+}
+
+.comment-box{
+    margin-left: 10%;
+    width: 100%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    text-align: left;
+}
+
+@media only screen and (max-width: 600px){
+    .sideminitab{
+        margin-top: 100%;
+        margin-right: 130%;
+        position: fixed;
+        background: rgba(255, 255, 255, 0.805);
+    }
+}
+
+.commentsend{
+}
+.commentsend input{
+    height: 35px;
+    padding-left: 5%;
+    width: 60%;
+    display: inline;
+}
+.commentsend button{
+    height: 40px;
+    display: inline;
+}
