@@ -20,7 +20,7 @@ const CreateBlog = () =>{
                 axios.post('https://blogsoftapi.herokuapp.com/create', data)
                 .then(response=>{
                     if(response.data.message){
-                        navigate('/myblogs')
+                        navigate('/dashboard')
                     }else{
                         console.log('error!!')
                     }
