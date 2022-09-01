@@ -11,7 +11,8 @@ const Blogstuc = (props) =>{
     const [Blog, setBlog] = useState({})
     const [likess, setLikess] = useState(0)
     useEffect(()=>{
-        axios.post('https://blogsoftapi.herokuapp.com/blog', uniquedata)
+        document.getElementById('loading').style.display = 'none';
+        axios.post('https://blogsoftapi.herokuapp.com/ownblog', uniquedata)
         .then(response =>{
             if(response.data.message){
                 setBlog(response.data.docs)

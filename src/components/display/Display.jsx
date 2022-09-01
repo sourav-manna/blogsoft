@@ -15,6 +15,7 @@ const Blogstuc = (props) =>{
     const [activel, setActivel] = useState(false)
 
     useEffect(()=>{
+        document.getElementById('loading').style.display = 'none';
         const data = {id: props.blog}
         axios.post('https://blogsoftapi.herokuapp.com/blog', data)
         .then(response =>{
