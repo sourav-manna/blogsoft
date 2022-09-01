@@ -18,7 +18,7 @@ function Navbar() {
                 <i id='menubar' onClick={()=>{document.getElementById('menuclose').style.display = "inline"; document.getElementById('menubar').style.display = "none"; document.getElementById('sidenav').style.display = "block"}} class="fa-solid fa-bars fa-xl"></i>
             </div>
             <div className='middle'>
-                <img src={`${process.env.PUBLIC_URL}/asset/image/weblogo.png`} alt=''></img><h3><b>Soft</b></h3><pre>🔍</pre>
+                <img src={`${process.env.PUBLIC_URL}/asset/image/weblogo.png`} alt=''></img><h3><b>Soft</b></h3>
             </div>
             <div className='last'>
                 <div className='user'>

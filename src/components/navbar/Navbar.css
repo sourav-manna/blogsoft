@@ -68,6 +68,9 @@ a{
     display: none;
 }
 
+.navbar .last .user{
+    cursor: pointer;
+}
 
 #menuclose{
     display: inline;
