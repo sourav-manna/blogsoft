@@ -23,12 +23,12 @@ const Page = (props) =>{
                     <img src={div1.image} alt=""></img>
                 </div>
                 <div className='body'>
-                    <div className = "header">
-                       {div1.title} 
+                <div className = "header">
+                       {div1.title}
                     </div>
                     <div className = "footer">
-                        <b>{div1.author}</b>
-                        <span class="postTime"><i class="fa-solid fa-calendar-days"></i> {moment(div1.createdAt).format('MMM DD, YYYY')}</span>
+                        <b>{div1.author}</b><br></br>
+                        <small>{div1.views} views • {moment(div1.createdAt).fromNow()}</small>
                     </div>
                     <br></br>
                     <div className = "contain">
@@ -41,12 +41,12 @@ const Page = (props) =>{
                     <img src={div2.image} alt=""></img>
                 </div>
                 <div className='body'>
-                    <div className = "header">
-                       {div2.title} 
+                <div className = "header">
+                       {div2.title}
                     </div>
                     <div className = "footer">
-                        <b>{div2.author}</b> • {div2.views} views
-                        <span class="postTime"><i class="fa-solid fa-calendar-days"></i> {moment(div2.createdAt).format('MMM DD, YYYY')}</span>
+                        <b>{div2.author}</b><br></br>
+                        <small>{div2.views} views • {moment(div2.createdAt).fromNow()}</small>
                     </div>
                     <br></br>
                     <div className = "contain">
@@ -59,12 +59,12 @@ const Page = (props) =>{
                     <img src={div3.image} alt=""></img>
                 </div>
                 <div className='body'>
-                    <div className = "header">
-                       {div3.title} 
+                <div className = "header">
+                       {div3.title}
                     </div>
                     <div className = "footer">
-                        <b>{div3.author}</b>
-                        <span class="postTime"><i class="fa-solid fa-calendar-days"></i> {moment(div3.createdAt).format('MMM DD, YYYY')}</span>
+                        <b>{div3.author}</b><br></br>
+                        <small>{div3.views} views • {moment(div3.createdAt).fromNow()}</small>
                     </div>
                     <br></br>
                     <div className = "contain">

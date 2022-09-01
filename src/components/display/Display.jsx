@@ -71,7 +71,7 @@ const Blogstuc = (props) =>{
 
     const commfunc = () =>{
         if(localStorage.getItem('user') != null && localStorage.getItem('name') != null){
-            if(commt == undefined || commt == null || commt == ""){
+            if(commt === undefined || commt == null || commt === ""){
                 alert('Please enter your comment')
             }else{
                  const commdata = {blog: props.blog, user: localStorage.getItem('user'), name: localStorage.getItem('name'), comment: commt}
@@ -101,7 +101,7 @@ const Blogstuc = (props) =>{
                        {Blog.title}
                     </div>
                     <div className = "footer">
-                        <b>{Blog.author}</b> • {Blog.views} views <span class="postTime"><i class="fa-solid fa-calendar-days"></i> {moment(Blog.createdAt).format('MMM DD, YYYY')}</span>
+                        <b>{Blog.author}</b> • {Blog.views} views <span class="postTime"><i class="fa-solid fa-calendar-days"></i> {moment(Blog.createdAt).fromNow()}</span>
                         <p id='likebtn' onClick={()=>like()}><i class="fa-solid fa-heart fa-lg"></i> {likes}</p>
                     </div>
                     <br></br>
@@ -116,21 +116,24 @@ const Blogstuc = (props) =>{
 
                 <div>
                 <div className='comment-box'>
+                    <h1>Comments</h1>
+                    <hr/>
                     {Commentt.map((comm)=>(
                         <div>
-                        <b>{comm.name}</b>
+                        <b>{comm.name}</b><small> • {moment(comm.createdAt).fromNow()}</small>
                         <br></br>
-                        {comm.comment}
+                        <span>{comm.comment}</span>
                         <br></br>
                         <br></br>
                         </div>
                      ))} 
-                    <div className='commentsend'>
+                     <br></br>
+                     <br></br>
+                </div>
+                <div className='commentsend'>
                         <input type="text" name="name" value={commt} placeholder='Type here ...' onChange={(e) => setCommt(e.target.value)}></input> 
                         <button onClick={()=>commfunc()}>Comment</button>
-                    </div> 
-                </div>
-                
+                </div> 
             </div>
             </div>
             </div>

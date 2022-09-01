@@ -32,11 +32,12 @@ const MyBlog = () => {
                        {blogs.title} 
                     </div>
                     <div className = "footer">
-                        <span class="postTime"><i class="fa-solid fa-calendar-days"></i> {moment(blogs.createdAt).format('MMM DD, YYYY')}</span>
-                        <br></br>
-                        <b><h1>{blogs.views}</h1></b>views
+                        <b>{blogs.views} </b><small>views • {moment(blogs.createdAt).fromNow()} </small>
                     </div>
                     <br></br>
+                    <div className = "contain">
+                        {blogs.desc}
+                    </div>
                 </div>
             </div>
     ))}

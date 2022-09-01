@@ -65,7 +65,7 @@ const Blogstuc = (props) =>{
                        {Blog.title}
                     </div>
                     <div className = "footer">
-                        <i class="fa-solid fa-calendar-days"></i> {moment(Blog.createdAt).format('MMM DD, YYYY')}
+                        <i class="fa-solid fa-calendar-days"></i> {moment(Blog.createdAt).fromNow()}
                         <span class="postTime"><div className='action-bar'> <Link to={linknetwork} className='linking' ><div className='edit'><i class="fas fa-edit fa-xl"></i>
                         </div></Link> &nbsp;|&nbsp; <div className='del' onClick={() =>{del()}}><i class="fa-solid fa-trash-can fa-xl"></i></div></div></span>
                     </div>

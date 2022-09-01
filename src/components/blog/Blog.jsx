@@ -31,9 +31,8 @@ const Blog = () => {
                        {blogs.title}
                     </div>
                     <div className = "footer">
-                        <b>{blogs.author}</b> • {blogs.views} views
-                        <span class="postTime"><i class="fa-solid fa-calendar-days"></i> {moment(blogs.createdAt).format('MMM DD, YYYY')}</span>
-                        <br></br>
+                        <b>{blogs.author}</b><br></br>
+                        <small>{blogs.views} views • {moment(blogs.createdAt).fromNow()}</small>
                     </div>
                     <br></br>
                     <div className = "contain">

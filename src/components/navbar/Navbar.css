@@ -26,6 +26,7 @@ a{
 }
 .navbar img{
     height: 50px;
+    display: inline;
 }
 .navbar .first{
     justify-content: left !important;
@@ -34,6 +35,13 @@ a{
 }
 .navbar .middle{
     flex-grow: 3;
+}
+
+
+.navbar .middle pre{
+    display: inline;
+    font-size: 18px;
+    cursor: pointer;
 }
 .navbar .last{
     justify-content: right;
