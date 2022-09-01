@@ -39,7 +39,7 @@ const Blogstuc = (props) =>{
                     axios.post('https://blogsoftapi.herokuapp.com/dscga75ru/delete', uniquedata)
                     .then(response=>{
                         if(response.data.status){
-                            navigate('/myblogs')
+                            navigate('/dashboard')
                         }else{
                             console.log('error!!')
                         }
