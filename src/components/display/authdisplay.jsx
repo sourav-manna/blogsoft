@@ -19,7 +19,7 @@ const Blogstuc = (props) =>{
                 console.log("Server error!!")
             }
         })
-        axios.post('https://blogsoftapi.herokuapp.com/getlikes', uniquedata)
+        axios.post('https://blogsoftapi.herokuapp.com/getlikes', {blog: props.blog})
         .then(ress=>{
             setLikess(ress.data.count)
         })
