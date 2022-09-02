@@ -6,7 +6,7 @@ import MyBlog from "../blog/Myblog";
 const Deshboard = () =>{
     const [likes, setLikes] = useState(0);
     const [view, setView] = useState(0);
-    const [bal, setBal] =  useState(0);
+    const [totalblog, setTotalblog] =  useState(0);
     const [status, setStatus] = useState(true);
     const data = {user: localStorage.getItem('email')}
 
@@ -15,6 +15,7 @@ const Deshboard = () =>{
     .then(res=>{
         let cc1 = 0 ;
         let cc2 = 0 ;
+        let cc3 = 0 ;
         res.data.docs.map((blogs) => (
             axios.post('https://blogsoftapi.herokuapp.com/getlikes', {blog : blogs._id})
             .then(ress=>{
@@ -22,11 +23,12 @@ const Deshboard = () =>{
                 setLikes(cc1)
                 cc2 += blogs.views
                 setView(cc2)
+                cc3 += 1
+                setTotalblog(cc3)
             })
         ))
     })
     }
-
     if(status){
         refer()
         setStatus(false)
@@ -35,6 +37,7 @@ const Deshboard = () =>{
 
     return(
         <>
+        <br></br>
         <h2>Hi, {localStorage.getItem('name')}</h2>
         <h3>Your Blog details</h3>
         <div className = "main-container">
@@ -43,6 +46,7 @@ const Deshboard = () =>{
                 <h1>{likes}</h1>
                 <p>Total Likes</p>
                 <br></br>
+                <br></br>
             </div>
             <div className = "blog">
                 <h1>{view}</h1>
@@ -50,8 +54,8 @@ const Deshboard = () =>{
                 <br></br>
             </div>
             <div className = "blog">
-                <h1>{bal}</h1>
-                <p>Total Coin</p>
+                <h1>{totalblog}</h1>
+                <p>Total Blogs</p>
                 <br></br>
             </div>
         </div>

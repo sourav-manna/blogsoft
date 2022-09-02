@@ -83,7 +83,7 @@
     overflow: hidden;
     border-color: black !important;
     border-radius: 5px;
-    box-shadow: 1px 3px 3px rgb(216, 216, 216);
+    box-shadow: 1px 3px 3px rgb(190, 190, 190);
     background-color:white;
     z-index: 1;
 }
