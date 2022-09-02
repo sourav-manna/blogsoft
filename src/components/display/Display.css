@@ -82,6 +82,11 @@
     margin-left: 40px;
 } 
 
+.sideminitab h1{
+    font-size: 30px;
+    font-weight: 500;
+}
+
 .comment-box h1{
     height: 20px;
     color: rgb(117, 117, 117);
@@ -104,11 +109,11 @@
 
 @media only screen and (max-width: 600px){
     .sideminitab{
-        margin-top: 100%;
-        margin-right: 130%;
-        position: fixed;
-        background: rgba(255, 255, 255, 0.805);
+        display: none;
     }
+}
+.commentsend{
+    text-align: center;
 }
 
 .commentsend input{

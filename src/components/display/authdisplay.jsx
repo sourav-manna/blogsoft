@@ -10,6 +10,9 @@ const Blogstuc = (props) =>{
     const uniquedata = {id: props.blog}
     const [Blog, setBlog] = useState({})
     const [likess, setLikess] = useState(0)
+    const [commt, setCommt] = useState()
+    const [Commentt, setComment] = useState([])
+
     useEffect(()=>{
         document.getElementById('loading').style.display = 'none';
         axios.post('https://blogsoftapi.herokuapp.com/ownblog', uniquedata)
@@ -23,6 +26,11 @@ const Blogstuc = (props) =>{
         axios.post('https://blogsoftapi.herokuapp.com/getlikes', {blog: props.blog})
         .then(ress=>{
             setLikess(ress.data.count)
+        })
+        axios.post('https://blogsoftapi.herokuapp.com/getcomments', {id: props.blog})
+        .then(ress=>{
+            console.log(ress.data.docs)
+            setComment(ress.data.docs)
         })
     },[]);
     
@@ -51,6 +59,33 @@ const Blogstuc = (props) =>{
             alert('Please log in')
         }
     }
+
+    const refetchcomm = () =>{
+        axios.post('https://blogsoftapi.herokuapp.com/getcomments', {id: props.blog})
+        .then(ress=>{
+            setComment(ress.data.docs)
+        })
+    }
+
+    const commfunc = () =>{
+        if(localStorage.getItem('user') != null && localStorage.getItem('name') != null){
+            if(commt === undefined || commt == null || commt === ""){
+                alert('Please enter your comment')
+            }else{
+                 const commdata = {blog: props.blog, user: localStorage.getItem('user'), name: localStorage.getItem('name'), comment: commt}
+                 axios.post('https://blogsoftapi.herokuapp.com/comment', commdata)
+                 .then(resss=>{
+                    if(resss.data.status){
+                        refetchcomm()
+                    }
+                 })
+                 setCommt("")
+            }
+
+        }else{
+            alert('Please log In')
+        } 
+    }
     
     const linknetwork = '/update/'+props.blog 
     
@@ -78,6 +113,25 @@ const Blogstuc = (props) =>{
                         <textarea className='view_me' readOnly value={Blog.contain}>
                         </textarea>
                     </div>
+                    <div className='comment-box'>
+                        <h1>Comments</h1>
+                        <hr/>
+                        {Commentt.map((comm)=>(
+                            <div>
+                            <b>{comm.name}</b><small> • {moment(comm.createdAt).fromNow()}</small>
+                            <br></br>
+                            <span>{comm.comment}</span>
+                            <br></br>
+                            <br></br>
+                            </div>
+                        ))} 
+                        <br></br>
+                     <br></br>
+                    </div>
+                    <div className='commentsend'>
+                        <input type="text" name="name" value={commt} placeholder='Type here ...' onChange={(e) => setCommt(e.target.value)}></input> 
+                        <button onClick={()=>commfunc()}>Comment</button>
+                    </div> 
                 </div>
             </div>
             <div className='sideminitab'>

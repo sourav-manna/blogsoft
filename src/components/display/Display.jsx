@@ -35,7 +35,6 @@ const Blogstuc = (props) =>{
         })
         axios.post('https://blogsoftapi.herokuapp.com/getcomments', data)
         .then(ress=>{
-            console.log(data)
             console.log(ress.data.docs)
             setComment(ress.data.docs)
         })
