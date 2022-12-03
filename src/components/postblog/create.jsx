@@ -13,11 +13,11 @@ const CreateBlog = () =>{
         if (localStorage.getItem('user') !== null && localStorage.getItem('email') !== null){
         let mblog = blog
         const user = {_id: localStorage.getItem('user'), email: localStorage.getItem('email')}
-        axios.post('https://blogsoftapi.herokuapp.com/auth', user)
+        axios.post('https://blog-backend-production-032d.up.railway.app/auth', user)
         .then(resp=>{
             if(resp.data.status){
                 const data = {title: title, desc: desc, contain: mblog, image: image, author: resp.data.name , authoremail: localStorage.getItem('email')}
-                axios.post('https://blogsoftapi.herokuapp.com/create', data)
+                axios.post('https://blog-backend-production-032d.up.railway.app/create', data)
                 .then(response=>{
                     if(response.data.message){
                         navigate('/dashboard')

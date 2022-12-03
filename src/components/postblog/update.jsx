@@ -16,7 +16,7 @@ const UpdateB = (props) =>{
 
     useEffect(()=>{
         console.log(props.blog)
-        axios.post('https://blogsoftapi.herokuapp.com/blog', {id: props.blog})
+        axios.post('https://blog-backend-production-032d.up.railway.app/blog', {id: props.blog})
         .then(response =>{
             if(response.data.message){
                 let k = response.data.docs;
@@ -39,13 +39,13 @@ const UpdateB = (props) =>{
         if (localStorage.getItem('user') !== null && localStorage.getItem('email') !== null){
             let mblog = blog
             const user = {_id: localStorage.getItem('user'), email: localStorage.getItem('email')}
-            axios.post('https://blogsoftapi.herokuapp.com/auth', user)
+            axios.post('https://blog-backend-production-032d.up.railway.app/auth', user)
             .then(resp=>{
                 if(email === localStorage.getItem('email')){
                 if(resp.data.status){
                     console.log('here me')
                     const data = {title: title, desc: desc, contain: mblog, image: image, id: props.blog}
-                    axios.post('https://blogsoftapi.herokuapp.com/blog/dscga75ru/update', data)
+                    axios.post('https://blog-backend-production-032d.up.railway.app/blog/dscga75ru/update', data)
                     .then(response=>{
                         if(response.data.status){
                             navigate("/view/"+props.blog)

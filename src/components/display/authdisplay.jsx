@@ -15,7 +15,7 @@ const Blogstuc = (props) =>{
 
     useEffect(()=>{
         document.getElementById('loading').style.display = 'none';
-        axios.post('https://blogsoftapi.herokuapp.com/ownblog', uniquedata)
+        axios.post('https://blog-backend-production-032d.up.railway.app/ownblog', uniquedata)
         .then(response =>{
             if(response.data.message){
                 setBlog(response.data.docs)
@@ -23,11 +23,11 @@ const Blogstuc = (props) =>{
                 console.log("Server error!!")
             }
         })
-        axios.post('https://blogsoftapi.herokuapp.com/getlikes', {blog: props.blog})
+        axios.post('https://blog-backend-production-032d.up.railway.app/getlikes', {blog: props.blog})
         .then(ress=>{
             setLikess(ress.data.count)
         })
-        axios.post('https://blogsoftapi.herokuapp.com/getcomments', {id: props.blog})
+        axios.post('https://blog-backend-production-032d.up.railway.app/getcomments', {id: props.blog})
         .then(ress=>{
             console.log(ress.data.docs)
             setComment(ress.data.docs)
@@ -39,12 +39,12 @@ const Blogstuc = (props) =>{
         let text = "\n   Delete this blog ?";
         if (localStorage.getItem('user') !== null && localStorage.getItem('email') !== null){
             const user = {_id: localStorage.getItem('user'), email: localStorage.getItem('email')}
-            axios.post('https://blogsoftapi.herokuapp.com/auth', user)
+            axios.post('https://blog-backend-production-032d.up.railway.app/auth', user)
             .then(resp=>{
                 if(resp.data.status){
                     if(Blog.authoremail === localStorage.getItem('email')){
                     if(window.confirm(text) === true){
-                    axios.post('https://blogsoftapi.herokuapp.com/dscga75ru/delete', uniquedata)
+                    axios.post('https://blog-backend-production-032d.up.railway.app/dscga75ru/delete', uniquedata)
                     .then(response=>{
                         if(response.data.status){
                             navigate('/dashboard')
@@ -61,7 +61,7 @@ const Blogstuc = (props) =>{
     }
 
     const refetchcomm = () =>{
-        axios.post('https://blogsoftapi.herokuapp.com/getcomments', {id: props.blog})
+        axios.post('https://blog-backend-production-032d.up.railway.app/getcomments', {id: props.blog})
         .then(ress=>{
             setComment(ress.data.docs)
         })
@@ -73,7 +73,7 @@ const Blogstuc = (props) =>{
                 alert('Please enter your comment')
             }else{
                  const commdata = {blog: props.blog, user: localStorage.getItem('user'), name: localStorage.getItem('name'), comment: commt}
-                 axios.post('https://blogsoftapi.herokuapp.com/comment', commdata)
+                 axios.post('https://blog-backend-production-032d.up.railway.app/comment', commdata)
                  .then(resss=>{
                     if(resss.data.status){
                         refetchcomm()

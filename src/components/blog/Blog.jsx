@@ -9,7 +9,7 @@ const Blog = () => {
     const [Bloglist, setBloglist] = useState([])
     useEffect(()=>{
         document.getElementById('loading').style.display = 'block';
-        axios.get('https://blogsoftapi.herokuapp.com/bloglist')
+        axios.get('https://blog-backend-production-032d.up.railway.app/bloglist')
         .then(response =>{
             if(response.data.message){
                 setBloglist(response.data.docs.reverse())

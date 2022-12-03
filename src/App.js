@@ -19,7 +19,7 @@ import Deshboard from './components/dashboard/dashboard';
 function App() {
   const [Bloglist, setBloglist] = useState([])
     useEffect(()=>{
-        axios.get('https://blogsoftapi.herokuapp.com/bloglist')
+        axios.get('https://blog-backend-production-032d.up.railway.app/bloglist')
         .then(response =>{
             if(response.data.message){
                 setBloglist(response.data.docs.reverse())

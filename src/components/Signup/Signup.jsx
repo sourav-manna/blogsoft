@@ -12,13 +12,13 @@ const Signup = () =>{
 
     const signupnow = () =>{
         if(name != undefined && email != undefined && pass != undefined){
-            axios.get('https://blogsoftapi.herokuapp.com/usercheck', {email: email})
+            axios.get('https://blog-backend-production-032d.up.railway.app/usercheck', {email: email})
             .then(res =>{
                 if(res.data.status){
                     setWarning('Email Id \n Already register')
                 }else{
                     const data = {name: name, email: email, pass: pass};
-                    axios.post('https://blogsoftapi.herokuapp.com/signup', data)
+                    axios.post('https://blog-backend-production-032d.up.railway.app/signup', data)
                     .then(response =>{
                         if(response.data.status){
                             console.log('user data store')
