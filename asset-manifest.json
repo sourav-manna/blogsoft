@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/blogsoft/static/css/main.6f5b2c4d.css",
+    "main.js": "/blogsoft/static/js/main.b17bface.js",
+    "index.html": "/blogsoft/index.html",
+    "main.6f5b2c4d.css.map": "/blogsoft/static/css/main.6f5b2c4d.css.map",
+    "main.b17bface.js.map": "/blogsoft/static/js/main.b17bface.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6f5b2c4d.css",
+    "static/js/main.b17bface.js"
+  ]
+}
