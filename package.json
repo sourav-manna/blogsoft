@@ -19,7 +19,8 @@
     "predeploy" : "npm run build",
     "deploy" : "gh-pages -d build",
     "start": "react-scripts start",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": [
