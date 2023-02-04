@@ -11,13 +11,13 @@ const Deshboard = () =>{
     const data = {user: localStorage.getItem('email')}
 
     const refer = () =>{
-    axios.post('https://blog-backend-production-032d.up.railway.app/myblogs', {email: localStorage.getItem('email')})
+    axios.post('https://blogsoftapi.onrender.com/myblogs', {email: localStorage.getItem('email')})
     .then(res=>{
         let cc1 = 0 ;
         let cc2 = 0 ;
         let cc3 = 0 ;
         res.data.docs.map((blogs) => (
-            axios.post('https://blog-backend-production-032d.up.railway.app/getlikes', {blog : blogs._id})
+            axios.post('https://blogsoftapi.onrender.com/getlikes', {blog : blogs._id})
             .then(ress=>{
                 cc1 += ress.data.count
                 setLikes(cc1)

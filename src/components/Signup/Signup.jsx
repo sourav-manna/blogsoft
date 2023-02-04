@@ -12,13 +12,13 @@ const Signup = () =>{
 
     const signupnow = () =>{
         if(name != undefined && email != undefined && pass != undefined){
-            axios.get('https://blog-backend-production-032d.up.railway.app/usercheck', {email: email})
+            axios.get('https://blogsoftapi.onrender.com/usercheck', {email: email})
             .then(res =>{
                 if(res.data.status){
                     setWarning('Email Id \n Already register')
                 }else{
                     const data = {name: name, email: email, pass: pass};
-                    axios.post('https://blog-backend-production-032d.up.railway.app/signup', data)
+                    axios.post('https://blogsoftapi.onrender.com/signup', data)
                     .then(response =>{
                         if(response.data.status){
                             console.log('user data store')

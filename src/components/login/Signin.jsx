@@ -17,7 +17,7 @@ const Signin = () =>{
         }
         else{
         const data = {email: email, pass: pass}
-        axios.post('https://blog-backend-production-032d.up.railway.app/signin', data)
+        axios.post('https://blogsoftapi.onrender.com/signin', data)
         .then(response=>{
             if(response.data.status){
                 localStorage.setItem('user',response.data.id);

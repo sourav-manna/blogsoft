@@ -9,7 +9,7 @@ const MyBlog = () => {
     const [MyBloglist, setMyBloglist] = useState([])
     useEffect(()=>{
         document.getElementById('loading').style.display = 'block';
-        axios.post('https://blog-backend-production-032d.up.railway.app/myblogs', {email: localStorage.getItem('email')})
+        axios.post('https://blogsoftapi.onrender.com/myblogs', {email: localStorage.getItem('email')})
         .then(response =>{
             if(response.data.message){
                 setMyBloglist(response.data.docs.reverse())

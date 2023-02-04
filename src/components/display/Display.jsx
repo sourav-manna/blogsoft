@@ -17,7 +17,7 @@ const Blogstuc = (props) =>{
     useEffect(()=>{
         document.getElementById('loading').style.display = 'none';
         const data = {id: props.blog}
-        axios.post('https://blog-backend-production-032d.up.railway.app/blog', data)
+        axios.post('https://blogsoftapi.onrender.com/blog', data)
         .then(response =>{
             if(response.data.message){
                 setBlog(response.data.docs)
@@ -25,7 +25,7 @@ const Blogstuc = (props) =>{
                 console.log("Server error!!")
             }
         })
-        axios.post('https://blog-backend-production-032d.up.railway.app/getlikes', {id: localStorage.getItem('user'), blog: props.blog})
+        axios.post('https://blogsoftapi.onrender.com/getlikes', {id: localStorage.getItem('user'), blog: props.blog})
         .then(res=>{
             setLikes(res.data.count)
             if(res.data.status){
@@ -33,7 +33,7 @@ const Blogstuc = (props) =>{
                 setActivel(true)
             }
         })
-        axios.post('https://blog-backend-production-032d.up.railway.app/getcomments', data)
+        axios.post('https://blogsoftapi.onrender.com/getcomments', data)
         .then(ress=>{
             console.log(ress.data.docs)
             setComment(ress.data.docs)
@@ -43,7 +43,7 @@ const Blogstuc = (props) =>{
     const like = () =>{
         if(localStorage.getItem('user') != null){
         const likedata = {id: localStorage.getItem('user'), blog: props.blog}
-        axios.post('https://blog-backend-production-032d.up.railway.app/likes', likedata)
+        axios.post('https://blogsoftapi.onrender.com/likes', likedata)
         .then(res =>{
             if(res.data){
             if (!activel){
@@ -63,7 +63,7 @@ const Blogstuc = (props) =>{
     }
 
     const refetchcomm = () =>{
-        axios.post('https://blog-backend-production-032d.up.railway.app/getcomments', {id: props.blog})
+        axios.post('https://blogsoftapi.onrender.com/getcomments', {id: props.blog})
         .then(ress=>{
             setComment(ress.data.docs)
         })
@@ -75,7 +75,7 @@ const Blogstuc = (props) =>{
                 alert('Please enter your comment')
             }else{
                  const commdata = {blog: props.blog, user: localStorage.getItem('user'), name: localStorage.getItem('name'), comment: commt}
-                 axios.post('https://blog-backend-production-032d.up.railway.app/comment', commdata)
+                 axios.post('https://blogsoftapi.onrender.com/comment', commdata)
                  .then(resss=>{
                     if(resss.data.status){
                         refetchcomm()
